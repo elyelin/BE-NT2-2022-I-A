@@ -1,7 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import NewTodo from './components/newTodo';
+import Button from './components/button'
 
 function App() {
+const callbBckButton = () => {
+  console.log('F')
+}
+
+//3 estados, tareas, cantidad de tareas, teras pendientes, eventos, eventos de array 
+//por cada elemento del array renderizo el componente de todo STATE
   return (
     <div className="container center">
       <h1 className='center title'>TODO App</h1>
@@ -11,24 +18,14 @@ function App() {
         <span>Todos pendientes: 3</span>
       </div>
 
-      <button className='button center'>Agregar TODO</button>
-      <ul className='todo-list'>
-        <li className='todo-container'>
-          <input type={"checkbox"} className='todo-checkbox' />
-          <span className=''>Tarea 1</span>
-          <button className='todo-delete'>X</button>
-        </li>
-        <li className='todo-container'>
-          <input type={"checkbox"} className='todo-checkbox' />
-          <span className=''>Tarea 2</span>
-          <button className='todo-delete'>X</button>
-        </li>
-        <li className='todo-container'>
-          <input type={"checkbox"} className='todo-checkbox' />
-          <span className=''>Tarea 3</span>
-          <button className='todo-delete'>X</button>
-        </li>
-      </ul>
+<Button callBack={callbBckButton}/>
+<ul className='todo-list'>
+  <NewTodo/>
+ <NewTodo/>
+ <NewTodo/>
+</ul>
+ 
+
     </div>
   );
 }
