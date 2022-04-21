@@ -9,6 +9,7 @@ const callbBckButton = () => {
 
 //3 estados, tareas, cantidad de tareas, teras pendientes, eventos, eventos de array 
 //por cada elemento del array renderizo el componente de todo STATE
+//chale
   return (
     <div className="container center">
       <h1 className='center title'>TODO App</h1>
