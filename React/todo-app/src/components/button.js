@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import "../styles/Button.css";
+import "../App.css"
 
-const button =  ({callBack}) => {
-    
-    return (
-        <div>
-            <button onClick={callBack} className='button center'>Agregar TODO</button>
-            </div>
-    )
-}
-export default button
+const Button = ({ callBack }) => {
+  return (
+    <div className="containerButton">
+    <button onClick={callBack} className="Button">
+      +
+    </button>
+ </div> );
+};
+export { Button };
