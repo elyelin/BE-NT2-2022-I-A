@@ -1,0 +1,16 @@
+.TodoCounter{
+    font-size: 24px;
+    text-align: center;
+    background-color: rgb(246, 237, 255);
+    padding: 48px;
+    margin: 0;
+    
+}
+.todo-container {
+    padding: 20px;
+    border-bottom: 1px solid #333;
+  }
+  
+  .todo-container:first-of-type {
+    border-top: 1px solid #333;
+  }
