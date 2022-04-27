@@ -6,9 +6,6 @@ import { TodoItem } from "./components/TodoItem";
 import { TodoCounter } from "./components/TodoCounter";
 import { TodoInput } from "./components/TodoInput";
 
-const callbBckButton = () => {
-  console.log("F");
-};
 
 const DefaultTodos = [
   {
@@ -38,9 +35,21 @@ function App() {
   const onChangeComplete = () => {
    setChecked(!checked)
   }
-  const onDelete = () => {
-    alert("eliminado")
+
+  const completeTodo = (text) => {
+    const todoIndex = todos.findIndex(todo => todo.text === text)
+    const newTodos = [...todos]
+    newTodos[todoIndex].completed = true
+    setTodos(newTodos)
   }
+
+  const deleteTodo = (text) => {
+    const todoIndex = todos.findIndex(todo => todo.text === text)
+    const newTodos = [...todos]
+    newTodos.splice(todoIndex, 1)
+    setTodos(newTodos)
+  }
+
   return (
     <React.Fragment>
       <div className="container">
@@ -48,12 +57,19 @@ function App() {
         total={cantidad.cantidadTodos}
         pendingTasks={pendingTasks.length}/>
         <TodoInput />
-        <Button callBack={callbBckButton} />
+        <Button /> {/* //callBack={callbBckButton}  */}
         <TodoList>
           {
             //  recorro la lista de todos y por cada elemento existente voy a renderizar un componente todoItem
             DefaultTodos.map((todo, index) => { 
-             return <TodoItem onCompleted={onChangeComplete} onDelete={onDelete} key={todo.text} text={todo.text} completed={checked}
+             return <TodoItem 
+             onCompleted={() => completeTodo(todo.text)}
+            // onCompleted={onChangeComplete}
+            // onDelete={onDelete} 
+            onDelete={() => deleteTodo(todo.text)}
+              key={todo.text} 
+              text={todo.text} 
+              completed={todo.completed}
               />
             })
           }
