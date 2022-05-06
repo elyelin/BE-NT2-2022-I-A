@@ -1,10 +1,10 @@
 import "../styles/Button.css";
 import "../App.css"
 
-const Button = ({ callBack }) => {
+const Button = ({ onClick }) => {
   return (
     <div className="containerButton">
-    <button onClick={callBack} className="Button">
+    <button onClick={onClick} className="Button">
       +
     </button>
  </div> );
